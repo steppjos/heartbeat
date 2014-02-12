@@ -8,6 +8,32 @@
 //
 //	tested on Windows 7 workstations.
 //
+//	creates the following object
+
+//	{
+//		"Name":"STRING",
+//		"Model":"STRING",
+//		"Manufacturer":"STRING",
+//		"ServiceTag":"STRING",
+//		"SystemType":"STRING",
+//		"TotalPhysicalMemory":NUM,
+//		"OS":{
+//			"Name":"STRING",
+//			"Serial":"STRING"
+//		},
+//		"Software":[
+//			{
+//				"Name":"STRING",
+//				"Vendor":"STRING",
+//				"Version":"STRING",
+//				"InstallDate":"STRING"
+//			},
+//		],
+//		"UserName":"STRING"
+//	}
+//
+//
+//
 ////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////
