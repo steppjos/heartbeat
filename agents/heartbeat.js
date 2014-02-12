@@ -9,7 +9,7 @@
 //	tested on Windows 7 workstations.
 //
 //	creates the following object
-
+//
 //	{
 //		"Name":"STRING",
 //		"Model":"STRING",
@@ -48,7 +48,6 @@ var AppData = shell.ExpandEnvironmentStrings("%AppData%")
 var fileName = AppData + "\\heartbeat.json";
 var wmi = GetObject("winmgmts://./root/cimv2");
 var compObj = {};
-var softwareObj = {};
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // set functions
@@ -56,7 +55,7 @@ var softwareObj = {};
 function fixUser(string) //removes domain and slash from windows usernames
 {
 	string = string.split("\\");
-    return string[string.length-1].toUpperCase();
+	return string[string.length-1].toUpperCase();
 };
 
 function fixOSName(data, callback) //tidies up OS Naming styles and checks if OEM OS
