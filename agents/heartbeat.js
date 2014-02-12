@@ -36,7 +36,7 @@ function fixUser(string) //removes domain and slash from windows usernames
 function fixOSName(data, callback) //tidies up OS Naming styles and checks if OEM OS
 {
 	var oemReg = new RegExp("OEM");	
-	data.Name = data.Name.replace(/MICROSOFT|SERVER|\(R\)|®/g,""); //remove unwanted
+	data.Name = data.Name.replace(/MICROSOFT|SERVER|\(R\)|ï¿½/g,""); //remove unwanted
 	data.Name = data.Name.replace(/\s\s/g," "); //remove double space
 	data.Name = data.Name.replace(/^\s+|\s+$/g,""); //trim	
 	//test for OEM
@@ -107,14 +107,9 @@ function getInstalledSoftware(callback) //use Windows Installer to search for pr
 			softObj.Name = "\""+installer.ProductInfo(products.Item(i),"InstalledProductName").toUpperCase()+"\"";
 			softObj.InstallDate = "\""+installer.ProductInfo(products.Item(i), "InstallDate").toUpperCase()+"\"";
 			softObj.Vendor = "\""+installer.ProductInfo(products.Item(i), "Publisher").toUpperCase()+"\"";
-			softObj.Version = "\""+installer.ProductInfo(products.Item(i), "VersionString").toUpperCase()+"\"";		
-			/*WScript.Echo(installer.ProductInfo(products.Item(i), "InstalledProductName"));
-			WScript.Echo(installer.ProductInfo(products.Item(i), "Publisher"));	
-			WScript.Echo(installer.ProductInfo(products.Item(i), "VersionString"));	
-			WScript.Echo(installer.ProductInfo(products.Item(i), "InstallDate"));*/
+			softObj.Version = "\""+installer.ProductInfo(products.Item(i), "VersionString").toUpperCase()+"\"";
 		}
-		catch(e){
-			//WScript.Echo(e);	
+		catch(e){	
 		}			
 		softwareArray.push(softObj);
 	}
@@ -172,7 +167,7 @@ function readData(){
 	sendData(data)
 };
 
-function runScript(mode){ //used on logon
+function runScript(mode){
 	getServiceTag(function(){
 		getOSInfo(function(){
 			getComputerInfo(function(){
